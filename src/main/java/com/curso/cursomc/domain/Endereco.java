@@ -11,7 +11,6 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
 @Entity
 public class Endereco implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -19,7 +18,7 @@ public class Endereco implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	private String lougadoro;
+	private String logradouro;
 	private String numero;
 	private String complemento;
 	private String bairro;
@@ -30,7 +29,6 @@ public class Endereco implements Serializable {
 	@JoinColumn(name="cliente_id")
 	private Cliente cliente;
 	
-	
 	@ManyToOne
 	@JoinColumn(name="cidade_id")
 	private Cidade cidade;
@@ -39,11 +37,11 @@ public class Endereco implements Serializable {
 		
 	}
 	
-	public Endereco(Integer id, String lougadoro, String numero, String complemento, String bairro, String cep, 
+	public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep, 
 			Cliente cliente, Cidade cidade) {
 		super();
 		this.id = id;
-		this.lougadoro = lougadoro;
+		this.logradouro = logradouro;
 		this.numero = numero;
 		this.complemento = complemento;
 		this.bairro = bairro;
@@ -63,13 +61,13 @@ public class Endereco implements Serializable {
 	}
 
 
-	public String getLougadoro() {
-		return lougadoro;
+	public String getLogradouro() {
+		return logradouro;
 	}
 
 
-	public void setLougadoro(String lougadoro) {
-		this.lougadoro = lougadoro;
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
 	}
 
 
@@ -140,7 +138,6 @@ public class Endereco implements Serializable {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
